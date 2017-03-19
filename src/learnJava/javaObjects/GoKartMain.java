@@ -9,7 +9,16 @@ public class GoKartMain {
         if (kart.isBatteryEmpty()) {
             System.out.println("The battery is empty");
         }
-        kart.drive(42);
+        kart.charge();
+        System.out.println(kart.isFullyCharged());
+        kart.drive(1);
+
+        try {
+            kart.drive(42);
+        }
+        catch (IllegalArgumentException iae) {
+            System.out.println(iae.getMessage());
+        }
     }
 
 }
