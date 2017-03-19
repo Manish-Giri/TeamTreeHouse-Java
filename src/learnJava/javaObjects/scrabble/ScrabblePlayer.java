@@ -27,4 +27,14 @@ public class ScrabblePlayer {
         return tiles.indexOf(tile) >= 0;
 
     }
+
+    public int getCountOfLetter(char letter) {
+        int count = 0;
+        for(char tile: tiles.toCharArray()) {
+            if(tile == letter) {
+                count++;
+            }
+        }
+        return count;
+    }
 }

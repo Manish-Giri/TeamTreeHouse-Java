@@ -13,13 +13,21 @@ public class Hangman {
         //System.out.println(game.applyGuess('t'));
         //System.out.println(game.applyGuess('n'));
         Prompter prompter = new Prompter(game);
-        boolean isHit = prompter.promptForGuess();
-        if(isHit) {
-            System.out.println("We got a hit!");
+
+        while (game.getRemainingTries() > 0) {
+            prompter.displayProgress();
+            prompter.promptForGuess();
         }
-        else {
-            System.out.println("Oops missed!");
-        }
+
+//        boolean isHit = prompter.promptForGuess();
+//        if(isHit) {
+//            System.out.println("We got a hit!");
+//        }
+//        else {
+//            System.out.println("Oops missed!");
+//        }
+
+
 
 
 

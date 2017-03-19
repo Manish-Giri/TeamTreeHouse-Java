@@ -21,7 +21,18 @@ public class Prompter {
       System.out.println("Enter a letter: ");
       String line = scanner.nextLine();
       char guess = line.charAt(0);
-      return game.applyGuess(guess);
+      boolean isHit = false;
+      try {
+          isHit = game.applyGuess(guess);
+      }catch (IllegalArgumentException iae) {
+          System.out.println(iae.getMessage());
+      }
+      return isHit;
+  }
+
+  public void displayProgress() {
+      System.out.printf("You have %d tries to solve: %s%n", game.getRemainingTries(), game.getCurrentProgress());
+
   }
 
 }
