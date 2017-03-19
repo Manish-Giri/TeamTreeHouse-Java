@@ -1,4 +1,4 @@
-package learnJava.javaObjects;
+package learnJava.javaObjects.gokart;
 
 /**
  * Created by hi on 3/18/2017.
